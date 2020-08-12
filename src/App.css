@@ -1,38 +1,527 @@
-.App {
+/* Universal styles */
+
+:root {
+  --header-blue: #23a6d5;
+  --header-turquoise: #23d5ab;
+  --highlight-color: #d52391;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+header {
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Kalam", cursive;
+  font-size: 5em;
+  text-transform: uppercase;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* utilidades */
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.highlight {
+  color: var(--highlight-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.section {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.section-title {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: lighter;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  background-color: gray;
+  height: 1px;
+  display: block;
+  position: absolute;
+  top: 120%;
+  left: 37%;
+  right: 37%;
+  width: auto;
+}
+
+.margin-bottom {
+  margin-bottom: 3em;
+}
+
+/** Header **/
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+/* Nav links */
+.navigation {
+  z-index: 1;
+}
+.navigation a {
+  margin-right: 1.2em;
+  color: whitesmoke;
+  border-bottom: 0.5px none white;
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+}
+.navigation a:last-of-type {
+  margin-right: 0;
+}
+.navigation a:hover {
+  padding-bottom: 0.5em;
+  border-bottom: 1.5px solid white;
+}
+
+/* Header animation */
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background-image: linear-gradient(
+    -45deg,
+    var(--header-blue),
+    var(--header-turquoise)
+  );
+}
+.bgTop {
+  z-index: -1;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: -2;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: -3;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+
+/** Us Section **/
+
+.us-section {
+  padding-top: 2em;
+}
+
+/* Team card */
+
+#card-container {
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 500px;
+  background: url(http://www.riccardotartaglia.it/img/nature.jpg);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1000px #23a5d573;
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+#card-container:hover {
+  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.9),
+    inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
+}
+#card-container:hover #avatar {
+  animation: none;
+  box-shadow: 0;
+  width: 200px;
+  height: 200px;
+}
+
+#card-container:hover #profile {
+  opacity: 1;
+  bottom: 0;
+}
+#profile {
+  transition: all 0.5s cubic-bezier(0.37, 0.26, 0.35, 1);
+  opacity: 0;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+#profile h3 {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+#profile h4 {
+  color: #aaa;
+  padding: 0;
+  margin: 5px 0 40px 0;
+  font-size: 0.9em;
+}
+#avatar {
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+  animation: circleAn 4s infinite;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 100%;
+  box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6);
+}
+@keyframes circleAn {
+  0% {
+    box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6),
+      0px 0px 0px 0px #23d5abb9, 0px 0px 0px 0px #23a5d573,
+      0px 0px 0px 0px #23a5d523;
+  }
+  100% {
+    box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6),
+      0px 0px 0px 70px rgba(102, 52, 105, 0),
+      0px 0px 0px 200px rgba(102, 52, 105, 0),
+      0px 0px 0px 300px rgba(102, 52, 105, 0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+@media screen and (max-width: 768px) {
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+} /* Medium size */
+@media screen and (max-width: 480px) {
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+  }
+} /* Small size */
+
+/* Workshops sections */
+
+.workshops-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+@media screen and (max-width: 1140px) {
+  .workshops-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+  }
+} /* Large size */
+
+/* Workshop card */
+.course {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.course h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.course h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.course-preview {
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1000px #1c86ada6;
+  color: #fff;
+  padding: 30px;
+}
+
+.course-preview a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.course-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.btn {
+  background-color: #1c87ad;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+}
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
+}
+.btn:active {
+  transition: all 0.2s cubic-bezier(0.37, 0.26, 0.35, 1);
+  transform: initial;
+  box-shadow: none;
+}
+
+@media screen and (max-width: 560px) {
+  .course-preview {
+    width: 50%;
+  }
+  .course h6 {
+    opacity: 0.6;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .course h2 {
+    letter-spacing: 1px;
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+  .btn {
+    font-size: 0.8em;
+    padding: 10px 10px;
+  }
+} /* Small size */
+
+@media screen and (max-width: 480px) {
+  .course {
+    text-align: center;
+  }
+  .course-preview {
+    width: 100%;
+    box-shadow: 0px 15px 15px -20px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1000px #2a265f8a;
+    height: 20%;
+  }
+  .course {
+    display: flex;
+    flex-direction: column;
+  }
+  .course h6 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  .course h2 {
+    letter-spacing: 1px;
+    margin: 10px 0;
+    font-size: 1.3em;
+  }
+  .course-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn {
+    font-size: 1em;
+    padding: 10px 10px;
+    position: unset;
+  }
+}
+
+/* Bootcamp */
+
+.bootcamp-section {
+  background-image: linear-gradient(
+    -45deg,
+    var(--header-blue),
+    var(--header-turquoise)
+  );
+  padding: 1em 0 5em 0;
+}
+.bootcamp-section .section {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+.bootcamp-section .section-title::after {
+  background-color: black;
+  width: 20%;
+  left: 40%;
+  right: 40%;
+}
+
+.bootcamp-section .content {
+  padding: 1em;
+  font-family: "Nunito", sans-serif;
+}
+.bootcamp-section .content h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.bootcamp-section .content p {
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+.bootcamp-section .content span {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.bootcamp-section a {
+  margin-top: 2em;
+}
+
+.bootcamp-section a {
+  background-color: var(--highlight-color);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  padding: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
+  font-family: "Kalam", cursive;
+  font-weight: bold;
+  max-width: 300px;
   color: white;
+  background-color: var(--highlight-color);
 }
 
-.App-link {
-  color: #61dafb;
+.bootcamp-section a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
+  color: var(--highlight-color);
+  background-color: #fff;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bootcamp-section a:active {
+  transition: all 0.2s cubic-bezier(0.37, 0.26, 0.35, 1);
+  transform: initial;
+  box-shadow: none;
 }
