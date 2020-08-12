@@ -178,7 +178,7 @@ function WorkshopList() {
           date={workshop.date}
           description={workshop.description}
           link={workshop.link}
-          description={workshop.image}
+          image={workshop.image}
         />
       ))}
     </WorkshopListStyled>

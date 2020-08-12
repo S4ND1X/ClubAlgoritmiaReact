@@ -301,69 +301,6 @@ h1 {
 
 /* Workshops sections */
 
-.workshops-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
-}
-
-@media screen and (max-width: 1140px) {
-  .workshops-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1em;
-  }
-} /* Large size */
-
-/* Workshop card */
-.course {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  max-width: 100%;
-  margin: 20px;
-  overflow: hidden;
-}
-
-.course h6 {
-  opacity: 0.6;
-  margin: 0;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.course h2 {
-  letter-spacing: 1px;
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-
-.course-preview {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 1000px #1c86ada6;
-  color: #fff;
-  padding: 30px;
-}
-
-.course-preview a {
-  color: #fff;
-  display: inline-block;
-  font-size: 12px;
-  opacity: 0.8;
-  margin-top: 30px;
-  text-decoration: none;
-}
-
-.course-info {
-  padding: 30px;
-  position: relative;
-  width: 100%;
-}
-
 .btn {
   background-color: #1c87ad;
   border: 0;
@@ -388,66 +325,6 @@ h1 {
   transition: all 0.2s cubic-bezier(0.37, 0.26, 0.35, 1);
   transform: initial;
   box-shadow: none;
-}
-
-@media screen and (max-width: 560px) {
-  .course-preview {
-    width: 50%;
-  }
-  .course h6 {
-    opacity: 0.6;
-    margin: 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .course h2 {
-    letter-spacing: 1px;
-    margin: 10px 0;
-    font-size: 1.1em;
-  }
-  .btn {
-    font-size: 0.8em;
-    padding: 10px 10px;
-  }
-} /* Small size */
-
-@media screen and (max-width: 480px) {
-  .course {
-    text-align: center;
-  }
-  .course-preview {
-    width: 100%;
-    box-shadow: 0px 15px 15px -20px rgba(0, 0, 0, 0.5),
-      inset 0 0 0 1000px #2a265f8a;
-    height: 20%;
-  }
-  .course {
-    display: flex;
-    flex-direction: column;
-  }
-  .course h6 {
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.8em;
-  }
-
-  .course h2 {
-    letter-spacing: 1px;
-    margin: 10px 0;
-    font-size: 1.3em;
-  }
-  .course-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn {
-    font-size: 1em;
-    padding: 10px 10px;
-    position: unset;
-  }
 }
 
 /* Bootcamp */

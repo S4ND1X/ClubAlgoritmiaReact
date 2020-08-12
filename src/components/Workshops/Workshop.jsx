@@ -137,7 +137,12 @@ function Workshop({ level, description, instructor, date, name, link, image }) {
   }
   return (
     <WorkshopStyled>
-      <div class="course-preview" style={{ backgroundImage: `url(${image})` }}>
+      <div
+        class="course-preview"
+        style={{
+          backgroundImage: `url(${image})`,
+        }}
+      >
         <h6>{level}</h6>
         <h2>{description}</h2>
         <a href="#us-section">{instructor}</a>
