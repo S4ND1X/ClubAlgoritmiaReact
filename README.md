@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,17 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+
+# Club Algoritmia React
+This repository contains the migrated vanilla JS, HTML and CSS code to ReactJS.
+
+## Technologies
+
+ - Implementing MongoDB to store the information 
+ - AXIOS to have the connection as well as the API created through Express and Node.   
+ - In addition to using React, Hooks and Styled
+   components
+
+# credits
+>>>>>>> dcb593831101c4ce49e187b906ee80f86541e75c
