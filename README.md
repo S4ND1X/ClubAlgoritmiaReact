@@ -10,4 +10,3 @@ This repository contains the migrated vanilla JS, HTML and CSS code to ReactJS.
    components
 
 # credits
->>>>>>> dcb593831101c4ce49e187b906ee80f86541e75c
