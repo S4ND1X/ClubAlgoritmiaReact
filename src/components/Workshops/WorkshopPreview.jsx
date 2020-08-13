@@ -2,7 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const WorkshopPreviewStyled = styled.div`
-  background-image: url(${(props) => props.image});
+  h6 {
+    opacity: 0.6;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    letter-spacing: 1px;
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
   width: 100%;
   background-size: cover;
   background-position: center center;
@@ -18,19 +30,6 @@ const WorkshopPreviewStyled = styled.div`
     opacity: 0.8;
     margin-top: 30px;
     text-decoration: none;
-  }
-
-  h6 {
-    opacity: 0.6;
-    margin: 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    letter-spacing: 1px;
-    margin: 10px 0;
-    text-transform: uppercase;
   }
 
   @media screen and (max-width: 560px) {
@@ -74,9 +73,8 @@ export default function WorkshopPreview({
   description,
   instructor,
 }) {
-  console.log(image);
   return (
-    <WorkshopPreviewStyled>
+    <WorkshopPreviewStyled style={{ backgroundImage: `url(${image})` }}>
       <h6>{level}</h6>
       <h2>{description}</h2>
       <a href="#us-section">{instructor}</a>
