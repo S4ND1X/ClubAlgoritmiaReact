@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import WorkshopInfo from "./WorkshopInfo";
+
 const WorkshopStyled = styled.div`
   background-color: #fff;
   border-radius: 10px;
@@ -132,9 +134,6 @@ const WorkshopStyled = styled.div`
 `;
 
 function Workshop({ level, description, instructor, date, name, link, image }) {
-  function handleClick() {
-    window.open(link);
-  }
   return (
     <WorkshopStyled>
       <div
@@ -147,13 +146,7 @@ function Workshop({ level, description, instructor, date, name, link, image }) {
         <h2>{description}</h2>
         <a href="#us-section">{instructor}</a>
       </div>
-      <div class="course-info">
-        <h6>{date}</h6>
-        <h2>{name}</h2>
-        <button class="btn" onClick={handleClick}>
-          Registrarme
-        </button>
-      </div>
+      <WorkshopInfo date={date} name={name} link={link} />
     </WorkshopStyled>
   );
 }
