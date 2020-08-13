@@ -84,31 +84,11 @@ h1 {
   margin-bottom: 3em;
 }
 
-/** Header **/
-
-/* Header animation */
-
-@keyframes move_wave {
-  0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.55);
-  }
-  100% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
-  }
-}
-
 /** Us Section **/
 
 .us-section {
   padding-top: 2em;
 }
-
-/* Team card */
-
-
 
 /* Workshops sections */
 
@@ -153,57 +133,4 @@ h1 {
   width: 20%;
   left: 40%;
   right: 40%;
-}
-
-.bootcamp-section .content {
-  padding: 1em;
-  font-family: "Nunito", sans-serif;
-}
-.bootcamp-section .content h3 {
-  text-transform: uppercase;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.bootcamp-section .content p {
-  color: #fff;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-.bootcamp-section .content span {
-  color: var(--highlight-color);
-  font-weight: bold;
-}
-
-.bootcamp-section a {
-  margin-top: 2em;
-}
-
-.bootcamp-section a {
-  background-color: var(--highlight-color);
-  border: none;
-  border-radius: 50px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-  padding: 12px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  outline: none;
-  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-  font-family: "Kalam", cursive;
-  font-weight: bold;
-  max-width: 300px;
-  color: white;
-  background-color: var(--highlight-color);
-}
-
-.bootcamp-section a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
-  color: var(--highlight-color);
-  background-color: #fff;
-}
-.bootcamp-section a:active {
-  transition: all 0.2s cubic-bezier(0.37, 0.26, 0.35, 1);
-  transform: initial;
-  box-shadow: none;
 }
