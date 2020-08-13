@@ -169,6 +169,8 @@ function WorkshopList() {
     },
   ];
 
+  console.log(JSON.stringify(workshopList));
+
   return (
     <WorkshopListStyled>
       {workshopList.map(
