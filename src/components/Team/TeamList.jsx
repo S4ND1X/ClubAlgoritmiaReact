@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import TeamMember from "./TeamMember";
 
+import { nanoid } from "nanoid";
+
 const TeamListStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -42,10 +44,10 @@ const teamMembers = [
     name: "Jorge Sanchez",
     avatar:
       "https://avatars2.githubusercontent.com/u/42609763?s=460&u=45f6f16c9021c254385c0f700662d2b667e69fdf&v=4",
-    title: "Web Developer",
+    title: "Fullstack",
     link: "https://github.com/S4ND1X",
     bg:
-      "https://i.pinimg.com/564x/57/16/ca/5716ca7eb8e7d8de46d52ee5a4f1e3b0.jpg",
+      "https://i.pinimg.com/originals/a8/3a/88/a83a88bc62b6ac19c293a4274f7ca60f.jpg",
   },
   {
     name: "Sebastian Crossa",
@@ -78,15 +80,21 @@ const teamMembers = [
 function TeamList() {
   return (
     <TeamListStyled>
-      {teamMembers.map((member) => (
-        <TeamMember
-          name={member.name}
-          avatar={member.avatar}
-          title={member.title}
-          link={member.link}
-          bg={member.bg}
-        />
-      ))}
+      {teamMembers.map(
+        (member) => (
+          (member.id = nanoid()),
+          (
+            <TeamMember
+              name={member.name}
+              avatar={member.avatar}
+              title={member.title}
+              link={member.link}
+              bg={member.bg}
+              key={member.id}
+            />
+          )
+        )
+      )}
     </TeamListStyled>
   );
 }

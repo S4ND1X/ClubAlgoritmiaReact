@@ -45,7 +45,7 @@ const TeamMemberStyled = styled.div`
   }
 
   #profile h4 {
-    color: #aaa;
+    color: #fff;
     padding: 0;
     margin: 5px 0 40px 0;
     font-size: 0.9em;

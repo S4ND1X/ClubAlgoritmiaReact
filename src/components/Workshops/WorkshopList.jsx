@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Workshop from "./Workshop";
+import { nanoid } from "nanoid";
 
 const WorkshopListStyled = styled.div`
   display: grid;
@@ -170,17 +171,23 @@ function WorkshopList() {
 
   return (
     <WorkshopListStyled>
-      {workshopList.map((workshop) => (
-        <Workshop
-          level={workshop.level}
-          name={workshop.name}
-          instructor={workshop.instructor}
-          date={workshop.date}
-          description={workshop.description}
-          link={workshop.link}
-          image={workshop.image}
-        />
-      ))}
+      {workshopList.map(
+        (workshop) => (
+          (workshop.id = nanoid()),
+          (
+            <Workshop
+              level={workshop.level}
+              name={workshop.name}
+              instructor={workshop.instructor}
+              date={workshop.date}
+              description={workshop.description}
+              link={workshop.link}
+              image={workshop.image}
+              key={workshop.id}
+            />
+          )
+        )
+      )}
     </WorkshopListStyled>
   );
 }
