@@ -14,7 +14,7 @@ const WorkshopPreviewStyled = styled.div`
     margin: 10px 0;
     text-transform: uppercase;
   }
-
+  background-image: url(${(props) => props.image});
   width: 100%;
   background-size: cover;
   background-position: center center;
@@ -74,7 +74,7 @@ export default function WorkshopPreview({
   instructor,
 }) {
   return (
-    <WorkshopPreviewStyled style={{ backgroundImage: `url(${image})` }}>
+    <WorkshopPreviewStyled image={image}>
       <h6>{level}</h6>
       <h2>{description}</h2>
       <a href="#us-section">{instructor}</a>
