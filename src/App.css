@@ -18,11 +18,6 @@ html {
 body {
   font-family: "Rubik", sans-serif;
 }
-
-header {
-  height: 100vh;
-}
-
 a {
   text-decoration: none;
 }
@@ -91,30 +86,6 @@ h1 {
 
 /** Header **/
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1em;
-}
-
-/* Nav links */
-.navigation {
-  z-index: 1;
-}
-.navigation a {
-  margin-right: 1.2em;
-  color: whitesmoke;
-  border-bottom: 0.5px none white;
-  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-}
-.navigation a:last-of-type {
-  margin-right: 0;
-}
-.navigation a:hover {
-  padding-bottom: 0.5em;
-  border-bottom: 1.5px solid white;
-}
-
 /* Header animation */
 
 @keyframes move_wave {
@@ -128,67 +99,6 @@ h1 {
     transform: translateX(-50%) translateZ(0) scaleY(1);
   }
 }
-.waveWrapper {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  margin: auto;
-}
-.waveWrapperInner {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  background-image: linear-gradient(
-    -45deg,
-    var(--header-blue),
-    var(--header-turquoise)
-  );
-}
-.bgTop {
-  z-index: -1;
-  opacity: 0.5;
-}
-.bgMiddle {
-  z-index: -2;
-  opacity: 0.75;
-}
-.bgBottom {
-  z-index: -3;
-}
-.wave {
-  position: absolute;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background-repeat: repeat no-repeat;
-  background-position: 0 bottom;
-  transform-origin: center bottom;
-}
-.waveTop {
-  background-size: 50% 100px;
-}
-.waveAnimation .waveTop {
-  animation: move-wave 3s;
-  -webkit-animation: move-wave 3s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-.waveMiddle {
-  background-size: 50% 120px;
-}
-.waveAnimation .waveMiddle {
-  animation: move_wave 10s linear infinite;
-}
-.waveBottom {
-  background-size: 50% 100px;
-}
-.waveAnimation .waveBottom {
-  animation: move_wave 15s linear infinite;
-}
 
 /** Us Section **/
 
@@ -198,106 +108,7 @@ h1 {
 
 /* Team card */
 
-#card-container {
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: 500px;
-  background: url(http://www.riccardotartaglia.it/img/nature.jpg);
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 1000px #23a5d573;
-  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-  border-radius: 10px;
 
-  cursor: pointer;
-}
-#card-container:hover {
-  box-shadow: 0px 30px 30px -20px rgba(0, 0, 0, 0.9),
-    inset 0 0 0 1000px rgba(67, 52, 109, 0.2);
-}
-#card-container:hover #avatar {
-  animation: none;
-  box-shadow: 0;
-  width: 200px;
-  height: 200px;
-}
-
-#card-container:hover #profile {
-  opacity: 1;
-  bottom: 0;
-}
-#profile {
-  transition: all 0.5s cubic-bezier(0.37, 0.26, 0.35, 1);
-  opacity: 0;
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-}
-#profile h3 {
-  color: #fff;
-  padding: 0;
-  margin: 0;
-}
-
-#profile h4 {
-  color: #aaa;
-  padding: 0;
-  margin: 5px 0 40px 0;
-  font-size: 0.9em;
-}
-#avatar {
-  transition: all 0.4s cubic-bezier(0.37, 0.26, 0.35, 1);
-  animation: circleAn 4s infinite;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 100%;
-  box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6);
-}
-@keyframes circleAn {
-  0% {
-    box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6),
-      0px 0px 0px 0px #23d5abb9, 0px 0px 0px 0px #23a5d573,
-      0px 0px 0px 0px #23a5d523;
-  }
-  100% {
-    box-shadow: 0px 30px 30px -25px rgba(0, 0, 0, 0.6),
-      0px 0px 0px 70px rgba(102, 52, 105, 0),
-      0px 0px 0px 200px rgba(102, 52, 105, 0),
-      0px 0px 0px 300px rgba(102, 52, 105, 0);
-  }
-}
-
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-}
-
-@media screen and (max-width: 768px) {
-  .team-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2em;
-  }
-} /* Medium size */
-@media screen and (max-width: 480px) {
-  .team-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2em;
-  }
-} /* Small size */
 
 /* Workshops sections */
 
@@ -336,12 +147,6 @@ h1 {
     var(--header-turquoise)
   );
   padding: 1em 0 5em 0;
-}
-.bootcamp-section .section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .bootcamp-section .section-title::after {
   background-color: black;

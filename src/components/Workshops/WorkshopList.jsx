@@ -15,6 +15,7 @@ const WorkshopListStyled = styled.div`
 `;
 
 function WorkshopList() {
+
   const workshopList = [
     {
       level: "Basico",
