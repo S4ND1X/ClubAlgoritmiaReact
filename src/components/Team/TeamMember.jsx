@@ -6,6 +6,7 @@ const TeamMemberStyled = styled.div`
   text-align: center;
   width: 100%;
   height: 500px;
+  background-image: url(${(props) => props.bg});
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -60,6 +61,7 @@ const TeamMemberStyled = styled.div`
     right: 0;
     bottom: 0;
     margin: auto;
+    background-image: url(${(props) => props.avatar});
     background-size: cover;
     background-position: center center;
     border-radius: 100%;
@@ -86,11 +88,8 @@ function TeamList({ name, avatar, title, link, bg }) {
   }
 
   return (
-    <TeamMemberStyled
-      onClick={handleClick}
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      <div id="avatar" style={{ backgroundImage: `url(${avatar})` }}></div>
+    <TeamMemberStyled onClick={handleClick} bg={bg} avatar={avatar}>
+      <div id="avatar"></div>
       <div id="profile">
         <h3>{name}</h3>
         <h4>{title}</h4>
