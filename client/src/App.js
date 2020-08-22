@@ -7,16 +7,18 @@ import GlobalStyle from "./GlobalStyle";
 
 import LandingPage from "./Pages/LandingPage";
 
+import WorkshopsProvider from "./context/WorkshopsProvider";
+
 function App() {
   return (
-    <div>
+    <WorkshopsProvider>
       <GlobalStyle />
       <Router>
         <Switch>
           <Route path="/" exact component={LandingPage} />
         </Switch>
       </Router>
-    </div>
+    </WorkshopsProvider>
   );
 }
 

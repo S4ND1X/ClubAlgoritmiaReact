@@ -3,6 +3,8 @@ const express = require("express");
 //Importing connection to DB
 const connectDB = require("./config/db");
 
+const cors = require("cors");
+
 //Create server
 const app = express();
 
@@ -13,6 +15,10 @@ const PORT = process.env.PORT || 4000;
 app.get("/", (req, res) => {
   res.send("Hola Mundo");
 });
+
+app.use(cors());
+//Enable express
+app.use(express.json({ extended: true }));
 
 //Import route to use when endpoint is /api/workshops (Middleware)
 app.use("/api/workshops", require("./routes/workshopsRoute"));

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Workshop from "./Workshop";
-import { nanoid } from "nanoid";
+
+import WorkshopsContext from "../../context/WorkshopsContext";
 
 const WorkshopListStyled = styled.div`
   display: grid;
@@ -16,6 +17,8 @@ const WorkshopListStyled = styled.div`
 `;
 
 function WorkshopList() {
+  // Using context of workshops
+  const { workshops } = useContext(WorkshopsContext);
   const workshopList = [
     {
       level: "Basico",
@@ -169,27 +172,20 @@ function WorkshopList() {
     },
   ];
 
-  console.log(JSON.stringify(workshopList));
-
   return (
     <WorkshopListStyled>
-      {workshopList.map(
-        (workshop) => (
-          (workshop.id = nanoid()),
-          (
-            <Workshop
-              level={workshop.level}
-              name={workshop.name}
-              instructor={workshop.instructor}
-              date={workshop.date}
-              description={workshop.description}
-              link={workshop.link}
-              image={workshop.image}
-              key={workshop.id}
-            />
-          )
-        )
-      )}
+      {workshops.map((workshop) => (
+        <Workshop
+          level={workshop.level}
+          name={workshop.name}
+          instructor={workshop.instructor}
+          date={workshop.date}
+          description={workshop.description}
+          link={workshop.link}
+          image={workshop.image}
+          key={workshop._id}
+        />
+      ))}
     </WorkshopListStyled>
   );
 }
