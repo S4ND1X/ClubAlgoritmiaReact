@@ -7,7 +7,7 @@ exports.getWorkshops = async (req, res) => {
   // if (level) {
   //   filter.level = level;
   // }
-  //Finding all of workshops
+  // Finding all of workshops
   workshopsModel
     .find()
     .then((data) => {

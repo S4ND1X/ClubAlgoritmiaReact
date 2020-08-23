@@ -5,6 +5,7 @@ import WorkshopList from "../components/Workshops/WorkshopList";
 import TeamList from "../components/Team/TeamList";
 import Header from "../components/Header/Header";
 import BootcampContent from "../components/Bootcamp/BootcampContent";
+import WorkshopsFilter from "../components/Workshops/WorkshopsFilter";
 
 const LandingPageStyled = styled.div``;
 
@@ -16,7 +17,10 @@ function LandingPage() {
 
       <main className="workshops-section margin-bottom" id="workshops-section">
         <h2 className="section-title text-center">workshops</h2>
-        <WorkshopList className="section" />
+        <div className="section">
+          <WorkshopsFilter />
+          <WorkshopList />
+        </div>
       </main>
       {/* Main content workshops */}
 
