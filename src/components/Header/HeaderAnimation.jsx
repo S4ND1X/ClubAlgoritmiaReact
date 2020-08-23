@@ -85,7 +85,7 @@ function HeaderAnimation() {
             className="wave waveTop"
             style={{
               backgroundImage:
-                "url('http://front-end-noobs.com/jecko/img/wave-top.png')",
+                "url('https://front-end-noobs.com/jecko/img/wave-top.png')",
             }}
           ></div>
         </div>
@@ -94,7 +94,7 @@ function HeaderAnimation() {
             className="wave waveMiddle"
             style={{
               backgroundImage:
-                "url('http://front-end-noobs.com/jecko/img/wave-mid.png')",
+                "url('https://front-end-noobs.com/jecko/img/wave-mid.png')",
             }}
           ></div>
         </div>
@@ -103,7 +103,7 @@ function HeaderAnimation() {
             className="wave waveBottom"
             style={{
               backgroundImage:
-                "url('http://front-end-noobs.com/jecko/img/wave-bot.png')",
+                "url('https://front-end-noobs.com/jecko/img/wave-bot.png')",
             }}
           ></div>
         </div>
