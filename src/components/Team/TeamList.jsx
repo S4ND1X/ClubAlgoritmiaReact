@@ -76,25 +76,22 @@ const teamMembers = [
       "https://i.pinimg.com/originals/64/b7/de/64b7deb1bfa083d44f5e5b6a5b0f1859.jpg",
   },
 ];
-
+teamMembers.forEach((member) => {
+  member.id = nanoid();
+});
 function TeamList() {
   return (
     <TeamListStyled>
-      {teamMembers.map(
-        (member) => (
-          (member.id = nanoid()),
-          (
-            <TeamMember
-              name={member.name}
-              avatar={member.avatar}
-              title={member.title}
-              link={member.link}
-              bg={member.bg}
-              key={member.id}
-            />
-          )
-        )
-      )}
+      {teamMembers.map((member) => (
+        <TeamMember
+          name={member.name}
+          avatar={member.avatar}
+          title={member.title}
+          link={member.link}
+          bg={member.bg}
+          key={member.id}
+        />
+      ))}
     </TeamListStyled>
   );
 }
