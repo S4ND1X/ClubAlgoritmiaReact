@@ -44,7 +44,7 @@ const teamMembers = [
     name: "Jorge Sanchez",
     avatar:
       "https://avatars2.githubusercontent.com/u/42609763?s=460&u=45f6f16c9021c254385c0f700662d2b667e69fdf&v=4",
-    title: "Fullstack",
+    title: "Fullstack Developer",
     link: "https://github.com/S4ND1X",
     bg:
       "https://i.pinimg.com/originals/a8/3a/88/a83a88bc62b6ac19c293a4274f7ca60f.jpg",
