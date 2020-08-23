@@ -1,43 +1,51 @@
 # Club Algoritmia GDA Fullstack Project
 ![enter image description here](https://i.imgur.com/RZoXTcW.png)
 
-  
-This repository contains the backend of the official [GDA Algorithmic Club](https://github.com/Club-de-Algoritmia-GDA) page, you can **check out the frontend repository** in [here](https://github.com/S4ND1X/ClubAlgoritmiaReact).
+ 
+This repository contains the frontend of the official [GDA Algorithmic Club](https://github.com/Club-de-Algoritmia-GDA) page, you can **check out the backend repository** in [here](https://github.com/S4ND1X/ClubAlgoritmiaBackend).
 
 ##   Technologies
-Frontend technologies can be found in [here](https://github.com/S4ND1X/ClubAlgoritmiaReact).
- - NodeJS
- - Express
- - MongoDB 
- - Mongoose
- - Cors Middleware
- - Heroku
- -  Nodemon (debugging
+Backend technologies can be found in [here](https://github.com/S4ND1X/ClubAlgoritmiaBackend).
+ - ReactJS
+ - Axios
+ - Hooks (useContext,useEffect,useState)	
+ - Styled components (GlobalStyle and Styled)
+ - JS
+ -  HTML
+ - CSS
 ***Extras***
- - Mongo Atlas
- - Mongo Compass
- - Postman
  - Netlify
  - VSC
  
 ## Usage
-Frontend usage can be found in [here](https://github.com/S4ND1X/ClubAlgoritmiaReact).
+Backend usage can be found in [here](https://github.com/S4ND1X/ClubAlgoritmiaBackend).
+
 Git clone this repo to your computer
 Inside the folder run:
 
-    npm run dev
-To start local server(nodemon), this will start the connection to MongoDB.
+    npm start
+To start local development server
 Api will start by default on port 4000.
 
-This project contains environment variables so inside you folder create a new file named:
+This project contains environment variables for deployment and local development, so inside src folder create two files named:
 
-    variables.env
- Inside this file, create a new variable for your Mongo Connection String and this will be imported into:
+    .env
+    .env.development.local
+ Inside *.env* place your base api url, this is the one that netlify will use in production. While in *.env.development.local* place the local api url, in my case it was on port 4000. For more information you can checkout backend usage [here](https://github.com/S4ND1X/ClubAlgoritmiaBackend).
  
+Be sure to name your variables as REACT_APP_YOURNAME to follow the convention described in React Documentation: [https://create-react-app.dev/docs/adding-custom-environment-variables/](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+ 
+This environment variable will be used on the following file
+   
 
-    index.js
+     src/config/axios.js
+
+Once you set up all of this, you should have your api data inside the context provider:
+
+    src/context/WorkshopsProvider.jsx
+
 If you follow all the instructions you should be all set up.
-Each document contains its own doctype.
+Each document contains its own proptype.
 
 ## Next features
 This Web App is still in development, maybe for the next 3 months. The future features are the following:
