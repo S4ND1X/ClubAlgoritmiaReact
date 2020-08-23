@@ -38,7 +38,7 @@ const teamMembers = [
       "https://avatars3.githubusercontent.com/u/20931186?s=460&u=74825a18189657fcb10c67663042865ee43cd4ff&v=4",
     title: "Microsoft Intern (Edge)",
     link: "https://github.com/Dcrdn",
-    bg: "https://wallpaperaccess.com/full/626610.jpg",
+    bg: "https://ertugrulokullari.com/skin/images/backend/mountains2.jpg",
   },
   {
     name: "Jorge Sanchez",
