@@ -2,11 +2,6 @@
 const workshopsModel = require("../models/workshopsModel");
 
 exports.getCurrentWorkshops = async (req, res) => {
-  // let filter = {};
-  // const level = req.query.level;
-  // if (level) {
-  //   filter.level = level;
-  // }
   // Finding all of workshops
   workshopsModel
     .find()
