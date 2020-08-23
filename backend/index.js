@@ -12,8 +12,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Define what happens on main page
-app.get("/", (req, res) => {
-  res.send("Hola Mundo");
+app.get("/api", (req, res) => {
+  res.send(
+    `<h1 style="text-align:center; margin-top: 1em;">Welcome to Club Algoritmia GDA API</h1>`
+  );
 });
 
 app.use(cors());

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import WorkshopsContext from "../../context/WorkshopsContext";
 
 const WorkshopsFilterStyled = styled.div`
   display: flex;
@@ -18,13 +19,18 @@ const WorkshopsFilterStyled = styled.div`
   }
 `;
 function WorkshopsFilter() {
-  const [pastChecked, setPastChecked] = useState(false);
-  const [upcomingChecked, setUpcomingChecked] = useState(false);
+  const {
+    filterPast,
+    filterUpcoming,
+    setFilterPast,
+    setFilterUpcoming,
+  } = useContext(WorkshopsContext);
+
   const handleChange = (e) => {
     if (e.target.name === "past") {
-      setPastChecked(!pastChecked);
+      setFilterPast(!filterPast);
     } else if (e.target.name === "upcoming") {
-      setUpcomingChecked(!upcomingChecked);
+      setFilterUpcoming(!filterUpcoming);
     }
   };
   return (

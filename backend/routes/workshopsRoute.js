@@ -6,6 +6,8 @@ const router = express.Router();
 const workshopsController = require("../controllers/workshopsController");
 
 //Action to do when get is executed on /api/workshops
-router.get("/", workshopsController.getWorkshops);
+router.get("/", workshopsController.getCurrentWorkshops);
+router.get("/past", workshopsController.getPastWorkshops);
+router.get("/upcoming", workshopsController.getUpcomingWorkshops);
 
 module.exports = router;

@@ -6,21 +6,40 @@ import clientAxios from "../config/axios";
 const WorkshopsProvider = (props) => {
   //Create state of context
   const [workshops, setWorkshops] = useState([]);
+  const [filterPast, setFilterPast] = useState(false);
+  const [filterUpcoming, setFilterUpcoming] = useState(false);
 
   //When component is loaded get workshops from api
   useEffect(() => {
     const getWorkshops = async () => {
-      const workshopsAPI = await clientAxios.get("/api/workshops");
-      setWorkshops(workshopsAPI.data);
+      let filterURL = "";
+      if (filterPast) {
+        filterURL = "past";
+      } else if (filterUpcoming) {
+        filterURL = "upcoming";
+      }
+      const workshopsAPI = await clientAxios.get(`/api/workshops/${filterURL}`);
+      setWorkshops(workshopsAPI.data.sort(compare));
     };
     getWorkshops();
-  }, []);
+  }, [filterPast, filterUpcoming]);
+
+  //Function to sort them
+  function compare(a, b) {
+    if (Date.parse(a.date) < Date.parse(b.date)) return -1;
+    if (Date.parse(a.date) > Date.parse(b.date)) return 1;
+    return 0;
+  }
 
   // Data that flows in in here
   return (
     <WorkshopsContext.Provider
       value={{
         workshops,
+        filterPast,
+        filterUpcoming,
+        setFilterPast,
+        setFilterUpcoming,
         setWorkshops,
       }}
     >

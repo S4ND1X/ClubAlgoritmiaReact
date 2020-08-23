@@ -27,7 +27,7 @@ function WorkshopList() {
           level={workshop.level}
           name={workshop.name}
           instructor={workshop.instructor}
-          date={workshop.date}
+          date={workshop.date.substr(0, 10)}
           description={workshop.description}
           link={workshop.link}
           image={workshop.image}
