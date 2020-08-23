@@ -24,7 +24,7 @@ Git clone this repo to your computer
 Inside the folder run:
 
     npm start
-To start local development server
+To start local development server and
 Api will start by default on port 4000.
 
 This project contains environment variables for deployment and local development, so inside src folder create two files named:
