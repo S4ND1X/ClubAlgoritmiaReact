@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 //Individual member card
 export default function TeamMember({ name, avatar, title, link, bg }) {
@@ -19,6 +20,23 @@ export default function TeamMember({ name, avatar, title, link, bg }) {
     </TeamMemberStyled>
   );
 }
+
+TeamMember.propTypes = {
+  name: PropTypes.string,
+  avatar: PropTypes.string,
+  title: PropTypes.string,
+  link: PropTypes.string,
+  bg: PropTypes.string,
+};
+TeamMember.defaultProps = {
+  name: "unknown",
+  avatar:
+    "https://rockfm-cdnmed.agilecontent.com/resources/jpg/4/5/1585755788054.jpg",
+  title: "unknown",
+  link: "https://github.com/Club-de-Algoritmia-GDA",
+  bg:
+    "https://www.lefthudson.com/wp-content/uploads/2019/11/retro-neon-background-new-synthwave-neon-80-s-background-rafael-de-jongh-web-developer-ideas-of-retro-neon-background.jpg",
+};
 
 // Styles
 const TeamMemberStyled = styled.div`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 //Button to eventbrite link
 export default function RegisterButton({ link }) {
@@ -13,6 +14,14 @@ export default function RegisterButton({ link }) {
     </RegisterButtonStyled>
   );
 }
+
+RegisterButton.propTypes = {
+  link: PropTypes.string,
+};
+
+RegisterButton.defaultProps = {
+  link: "https://www.eventbrite.com.mx/o/club-algoritmia-itesm-gda-30879581489",
+};
 
 //Styles
 const RegisterButtonStyled = styled.div`

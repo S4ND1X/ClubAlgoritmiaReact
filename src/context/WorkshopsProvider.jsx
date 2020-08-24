@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import WorkshopsContext from "./WorkshopsContext";
 import clientAxios from "../config/axios";
 
+import PropTypes from "prop-types";
+
 //Provider, where data is given and state
 const WorkshopsProvider = (props) => {
   //Set state of global workshops
@@ -49,6 +51,11 @@ const WorkshopsProvider = (props) => {
       {props.children}
     </WorkshopsContext.Provider>
   );
+};
+
+WorkshopsProvider.propTypes = {
+  workshops: PropTypes.array,
+  filters: PropTypes.object,
 };
 
 export default WorkshopsProvider;

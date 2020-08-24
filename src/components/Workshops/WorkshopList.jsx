@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Workshop from "./Workshop";
 import WorkshopsContext from "../../context/WorkshopsContext";
 
+import PropTypes from "prop-types";
+
 //Workshop cards container
 export default function WorkshopList() {
   // Using global workshops state
@@ -27,6 +29,10 @@ export default function WorkshopList() {
     </WorkshopListStyled>
   );
 }
+
+WorkshopList.propTypes = {
+  workshops: PropTypes.array,
+};
 
 // Styles
 const WorkshopListStyled = styled.div`

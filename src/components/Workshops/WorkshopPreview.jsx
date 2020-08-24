@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import PropTypes from "prop-types";
+
 //Left side workshop card
 export default function WorkshopPreview({
   image,
@@ -16,6 +18,13 @@ export default function WorkshopPreview({
     </WorkshopPreviewStyled>
   );
 }
+
+WorkshopPreview.propTypes = {
+  image: PropTypes.string,
+  level: PropTypes.string,
+  description: PropTypes.string,
+  instructor: PropTypes.string,
+};
 
 //Styles
 const WorkshopPreviewStyled = styled.div`

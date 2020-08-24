@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import WorkshopsContext from "../../context/WorkshopsContext";
 
+import PropTypes from "prop-types";
+
 //Workshops filtering checkboxes
 export default function WorkshopsFilter() {
   const { filters, setFilters } = useContext(WorkshopsContext);
@@ -28,6 +30,8 @@ export default function WorkshopsFilter() {
     </WorkshopsFilterStyled>
   );
 }
+
+WorkshopsFilter.propTypes = { filters: PropTypes.object };
 
 //Styles
 const WorkshopsFilterStyled = styled.div`

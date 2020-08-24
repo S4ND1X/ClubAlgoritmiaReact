@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import RegisterButton from "./RegisterButton";
 
+import PropTypes from "prop-types";
+
 //Right side of workshop card
 export default function WorkshopInfo({ date, name, link }) {
   return (
@@ -13,6 +15,12 @@ export default function WorkshopInfo({ date, name, link }) {
     </WorkshopInfoStyled>
   );
 }
+
+WorkshopInfo.propTypes = {
+  date: PropTypes.string,
+  name: PropTypes.string,
+  link: PropTypes.string,
+};
 
 // Styles
 const WorkshopInfoStyled = styled.div`
