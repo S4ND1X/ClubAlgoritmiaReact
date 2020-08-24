@@ -46,5 +46,4 @@ function LandingPage() {
     </LandingPageStyled>
   );
 }
-
 export default LandingPage;
