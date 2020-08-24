@@ -6,6 +6,7 @@ import clientAxios from "../config/axios";
 const WorkshopsProvider = (props) => {
   //Create state of context
   const [workshops, setWorkshops] = useState([]);
+
   const [filterPast, setFilterPast] = useState(false);
   const [filterUpcoming, setFilterUpcoming] = useState(false);
 
@@ -19,6 +20,7 @@ const WorkshopsProvider = (props) => {
         filterURL = "upcoming";
       }
       const workshopsAPI = await clientAxios.get(`/api/workshops/${filterURL}`);
+
       setWorkshops(workshopsAPI.data.sort(compare));
     };
     getWorkshops();
