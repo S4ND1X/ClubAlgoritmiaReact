@@ -16,6 +16,9 @@ const WorkshopListStyled = styled.div`
   } /* Large size */
 `;
 
+
+
+//TODO destruct workshop
 function WorkshopList() {
   // Using context of workshops
   const { workshops } = useContext(WorkshopsContext);

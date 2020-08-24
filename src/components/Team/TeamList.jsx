@@ -5,6 +5,8 @@ import TeamMember from "./TeamMember";
 
 import { nanoid } from "nanoid";
 
+//TODO mover todos los styles abajo
+
 const TeamListStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -76,6 +78,7 @@ const teamMembers = [
       "https://i.pinimg.com/originals/64/b7/de/64b7deb1bfa083d44f5e5b6a5b0f1859.jpg",
   },
 ];
+//TODO poner index como key
 teamMembers.forEach((member) => {
   member.id = nanoid();
 });

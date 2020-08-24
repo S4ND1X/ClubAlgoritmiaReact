@@ -33,6 +33,8 @@ function WorkshopsFilter() {
       setFilterUpcoming(!filterUpcoming);
     }
   };
+
+  //TODO hacer objeto los filtros
   return (
     <WorkshopsFilterStyled>
       <div className="filter">
