@@ -34,7 +34,6 @@ function WorkshopsFilter() {
     }
   };
 
-  //TODO hacer objeto los filtros
   return (
     <WorkshopsFilterStyled>
       <div className="filter">

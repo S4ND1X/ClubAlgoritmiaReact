@@ -15,7 +15,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
-          <Route path="/" exact component={LandingPage} />
+          <Route path="/" exact component={LandingPage}/>
         </Switch>
       </Router>
     </WorkshopsProvider>
