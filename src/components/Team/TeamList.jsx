@@ -20,6 +20,7 @@ const TeamListStyled = styled.div`
     grid-template-columns: repeat(1, 1fr);
     gap: 2em;
   } /* Small size */
+  
 `;
 
 const teamMembers = [
