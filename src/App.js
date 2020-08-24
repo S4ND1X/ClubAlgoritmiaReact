@@ -5,7 +5,7 @@ import "./App.css";
 
 import GlobalStyle from "./GlobalStyle";
 
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./Pages/LandingPage";
 
 import WorkshopsProvider from "./context/WorkshopsProvider";
 
@@ -15,7 +15,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <Switch>
-          <Route path="/" exact component={LandingPage}/>
+          <Route path="/" exact component={LandingPage} />
         </Switch>
       </Router>
     </WorkshopsProvider>
