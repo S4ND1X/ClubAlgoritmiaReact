@@ -1,5 +1,4 @@
-import React from "react";
-import styled from "styled-components";
+import React, { Fragment } from "react";
 
 import WorkshopList from "../components/Workshops/WorkshopList";
 import TeamList from "../components/Team/TeamList";
@@ -7,13 +6,11 @@ import Header from "../components/Header/Header";
 import BootcampContent from "../components/Bootcamp/BootcampContent";
 import WorkshopsFilter from "../components/Workshops/WorkshopsFilter";
 
-const LandingPageStyled = styled.div``;
-
 function LandingPage() {
   return (
-    <LandingPageStyled>
-      {/*Header animation and text */}
+    <Fragment>
       <Header />
+      {/*Header animation and text */}
 
       <main className="workshops-section margin-bottom" id="workshops-section">
         <h2 className="section-title text-center">workshops</h2>
@@ -43,7 +40,8 @@ function LandingPage() {
           <TeamList />
         </div>
       </section>
-    </LandingPageStyled>
+      {/* Team Section */}
+    </Fragment>
   );
 }
 export default LandingPage;

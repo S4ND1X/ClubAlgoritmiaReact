@@ -1,47 +1,48 @@
 import React, { useState, useEffect } from "react";
 import WorkshopsContext from "./WorkshopsContext";
 import clientAxios from "../config/axios";
+
 //Provider, where data is given and state
-
 const WorkshopsProvider = (props) => {
-  //Create state of context
+  //Set state of global workshops
   const [workshops, setWorkshops] = useState([]);
+  //Set global state of filters for endpoints
+  const [filters, setFilters] = useState({ past: false, upcoming: false });
 
-  const [filterPast, setFilterPast] = useState(false);
-  const [filterUpcoming, setFilterUpcoming] = useState(false);
-
-  //When component is loaded get workshops from api
+  //When component is loaded or filters changed get workshops from api
   useEffect(() => {
     const getWorkshops = async () => {
-      let filterURL = "";
-      if (filterPast) {
+      //Set api endpoint depending on filters
+      let filterURL;
+      if (filters.past) {
         filterURL = "past";
-      } else if (filterUpcoming) {
+      } else if (filters.upcoming) {
         filterURL = "upcoming";
+      } else {
+        filterURL = "";
       }
+      //Fetch api for workshops and wait for response
       const workshopsAPI = await clientAxios.get(`/api/workshops/${filterURL}`);
 
+      //Set fetched workshops in chronological order
       setWorkshops(workshopsAPI.data.sort(compare));
     };
+    //Then call the function
     getWorkshops();
-  }, [filterPast, filterUpcoming]);
+  }, [filters]);
 
-  //Function to sort them
+  //Function to sort workshops by date
   function compare(a, b) {
-    if (Date.parse(a.date) < Date.parse(b.date)) return -1;
-    if (Date.parse(a.date) > Date.parse(b.date)) return 1;
-    return 0;
+    return Date.parse(a.date) < Date.parse(b.date) ? -1 : 1;
   }
 
-  // Data that flows in in here
+  // Data flows trought the app
   return (
     <WorkshopsContext.Provider
       value={{
         workshops,
-        filterPast,
-        filterUpcoming,
-        setFilterPast,
-        setFilterUpcoming,
+        filters,
+        setFilters,
         setWorkshops,
       }}
     >

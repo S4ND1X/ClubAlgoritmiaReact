@@ -9,7 +9,8 @@ import LandingPage from "./Pages/LandingPage";
 
 import WorkshopsProvider from "./context/WorkshopsProvider";
 
-function App() {
+//Main App component, providing global states and functions, gobalstyle and switch fot potetntial growth
+export default function App() {
   return (
     <WorkshopsProvider>
       <GlobalStyle />
@@ -21,5 +22,3 @@ function App() {
     </WorkshopsProvider>
   );
 }
-
-export default App;

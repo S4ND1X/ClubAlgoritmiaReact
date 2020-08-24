@@ -1,9 +1,34 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import Workshop from "./Workshop";
-
 import WorkshopsContext from "../../context/WorkshopsContext";
 
+//Workshop cards container
+export default function WorkshopList() {
+  // Using global workshops state
+  const { workshops } = useContext(WorkshopsContext);
+  //Render a Workshop with all attributes
+  return (
+    <WorkshopListStyled>
+      {workshops.map(
+        ({ level, name, instructor, date, description, link, image, _id }) => (
+          <Workshop
+            level={level}
+            name={name}
+            instructor={instructor}
+            date={date.substr(0, 10)}
+            description={description}
+            link={link}
+            image={image}
+            key={_id}
+          />
+        )
+      )}
+    </WorkshopListStyled>
+  );
+}
+
+// Styles
 const WorkshopListStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -15,27 +40,3 @@ const WorkshopListStyled = styled.div`
     gap: 1em;
   } /* Large size */
 `;
-
-function WorkshopList() {
-  // Using context of workshops
-  const { workshops } = useContext(WorkshopsContext);
-
-  return (
-    <WorkshopListStyled>
-      {workshops.map((workshop) => (
-        <Workshop
-          level={workshop.level}
-          name={workshop.name}
-          instructor={workshop.instructor}
-          date={workshop.date.substr(0, 10)}
-          description={workshop.description}
-          link={workshop.link}
-          image={workshop.image}
-          key={workshop._id}
-        />
-      ))}
-    </WorkshopListStyled>
-  );
-}
-
-export default WorkshopList;

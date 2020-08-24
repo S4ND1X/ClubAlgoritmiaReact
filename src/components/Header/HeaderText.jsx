@@ -1,18 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React, { Fragment } from "react";
 
-const HeaderTextStyled = styled.div``;
-
-function HeaderText() {
+//Header text
+export default function HeaderText() {
   return (
-    <HeaderTextStyled>
+    <Fragment>
       <h1>
         Club <br />
         <span className="highlight">Algoritmia</span> <br />
         GDA
       </h1>
-    </HeaderTextStyled>
+    </Fragment>
   );
 }
-
-export default HeaderText;

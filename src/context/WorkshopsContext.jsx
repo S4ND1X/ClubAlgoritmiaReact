@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-//Creating the context
-export const WorkshopsContext = createContext();
+//Creating the context of the app
+const WorkshopsContext = createContext();
 
 export default WorkshopsContext;

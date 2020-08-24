@@ -5,11 +5,8 @@ import HeaderAnimation from "./HeaderAnimation";
 import HeaderText from "./HeaderText";
 import HeaderNav from "./HeaderNav";
 
-const HeaderStyled = styled.div`
-  height: 100vh;
-`;
-
-function Header() {
+//Header container, animation, text and navbar
+export default function Header() {
   return (
     <HeaderStyled className="flex-column-center text-center margin-bottom">
       <HeaderAnimation />
@@ -21,4 +18,6 @@ function Header() {
   );
 }
 
-export default Header;
+const HeaderStyled = styled.div`
+  height: 100vh;
+`;

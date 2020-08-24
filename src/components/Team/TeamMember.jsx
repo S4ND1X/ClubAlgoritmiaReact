@@ -1,6 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
+//Individual member card
+export default function TeamMember({ name, avatar, title, link, bg }) {
+  //OnClick open a new browser tab on member github profile
+  function handleClick() {
+    window.open(link);
+  }
+
+  //Add bg and avatar as prop to use it on styled components
+  return (
+    <TeamMemberStyled onClick={handleClick} bg={bg} avatar={avatar}>
+      <div id="avatar"></div>
+      <div id="profile">
+        <h3>{name}</h3>
+        <h4>{title}</h4>
+      </div>
+    </TeamMemberStyled>
+  );
+}
+
+// Styles
 const TeamMemberStyled = styled.div`
   overflow: hidden;
   text-align: center;
@@ -81,21 +101,3 @@ const TeamMemberStyled = styled.div`
     }
   }
 `;
-
-function TeamList({ name, avatar, title, link, bg }) {
-  function handleClick() {
-    window.open(link);
-  }
-
-  return (
-    <TeamMemberStyled onClick={handleClick} bg={bg} avatar={avatar}>
-      <div id="avatar"></div>
-      <div id="profile">
-        <h3>{name}</h3>
-        <h4>{title}</h4>
-      </div>
-    </TeamMemberStyled>
-  );
-}
-
-export default TeamList;

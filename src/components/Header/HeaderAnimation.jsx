@@ -1,6 +1,46 @@
 import React from "react";
 import styled from "styled-components";
 
+export default function HeaderAnimation() {
+  return (
+    <HeaderAnimationStyled>
+      <div className="waveWrapper waveAnimation">
+        <div className="waveWrapperInner bgTop">
+          <div
+            className="wave waveTop"
+            style={{
+              backgroundImage:
+                "url('https://front-end-noobs.com/jecko/img/wave-top.png')",
+            }}
+          ></div>
+        </div>
+        {/* Top Wave animation */}
+        <div className="waveWrapperInner bgMiddle">
+          <div
+            className="wave waveMiddle"
+            style={{
+              backgroundImage:
+                "url('https://front-end-noobs.com/jecko/img/wave-mid.png')",
+            }}
+          ></div>
+        </div>
+        {/* Middle Wave animation */}
+        <div className="waveWrapperInner bgBottom">
+          <div
+            className="wave waveBottom"
+            style={{
+              backgroundImage:
+                "url('https://front-end-noobs.com/jecko/img/wave-bot.png')",
+            }}
+          ></div>
+        </div>
+        {/* Bottom Wave animation */}
+      </div>
+    </HeaderAnimationStyled>
+  );
+}
+
+//Styles
 const HeaderAnimationStyled = styled.div`
   .waveWrapper {
     overflow: hidden;
@@ -75,41 +115,3 @@ const HeaderAnimationStyled = styled.div`
     }
   }
 `;
-
-function HeaderAnimation() {
-  return (
-    <HeaderAnimationStyled>
-      <div className="waveWrapper waveAnimation">
-        <div className="waveWrapperInner bgTop">
-          <div
-            className="wave waveTop"
-            style={{
-              backgroundImage:
-                "url('https://front-end-noobs.com/jecko/img/wave-top.png')",
-            }}
-          ></div>
-        </div>
-        <div className="waveWrapperInner bgMiddle">
-          <div
-            className="wave waveMiddle"
-            style={{
-              backgroundImage:
-                "url('https://front-end-noobs.com/jecko/img/wave-mid.png')",
-            }}
-          ></div>
-        </div>
-        <div className="waveWrapperInner bgBottom">
-          <div
-            className="wave waveBottom"
-            style={{
-              backgroundImage:
-                "url('https://front-end-noobs.com/jecko/img/wave-bot.png')",
-            }}
-          ></div>
-        </div>
-      </div>
-    </HeaderAnimationStyled>
-  );
-}
-
-export default HeaderAnimation;

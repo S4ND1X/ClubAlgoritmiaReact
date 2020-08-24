@@ -1,6 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
+//Left side workshop card
+export default function WorkshopPreview({
+  image,
+  level,
+  description,
+  instructor,
+}) {
+  return (
+    <WorkshopPreviewStyled image={image}>
+      <h6>{level}</h6>
+      <h2>{description}</h2>
+      <a href="#us-section">{instructor}</a>
+    </WorkshopPreviewStyled>
+  );
+}
+
+//Styles
 const WorkshopPreviewStyled = styled.div`
   h6 {
     opacity: 0.6;
@@ -66,18 +83,3 @@ const WorkshopPreviewStyled = styled.div`
     }
   }
 `;
-
-export default function WorkshopPreview({
-  image,
-  level,
-  description,
-  instructor,
-}) {
-  return (
-    <WorkshopPreviewStyled image={image}>
-      <h6>{level}</h6>
-      <h2>{description}</h2>
-      <a href="#us-section">{instructor}</a>
-    </WorkshopPreviewStyled>
-  );
-}

@@ -1,6 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+//Button to eventbrite link
+export default function RegisterButton({ link }) {
+  //On click send to eventrbrite link of workshop
+  function handleClick() {
+    window.open(link);
+  }
+  return (
+    <RegisterButtonStyled onClick={handleClick}>
+      Registrarme
+    </RegisterButtonStyled>
+  );
+}
+
+//Styles
 const RegisterButtonStyled = styled.div`
   background-color: #1c87ad;
   border: 0;
@@ -37,14 +51,3 @@ const RegisterButtonStyled = styled.div`
     position: unset;
   }
 `;
-
-export default function RegisterButton({ link }) {
-  function handleClick() {
-    window.open(link);
-  }
-  return (
-    <RegisterButtonStyled onClick={handleClick}>
-      Registrarme
-    </RegisterButtonStyled>
-  );
-}

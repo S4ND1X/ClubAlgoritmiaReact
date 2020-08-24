@@ -4,6 +4,32 @@ import styled from "styled-components";
 import WorkshopInfo from "./WorkshopInfo";
 import WorkshopPreview from "./WorkshopPreview";
 
+//Workshop card component
+export default function Workshop({
+  level,
+  description,
+  instructor,
+  date,
+  name,
+  link,
+  image,
+}) {
+  return (
+    <WorkshopStyled>
+    {/* Left side of workshop card */}
+      <WorkshopPreview
+        level={level}
+        instructor={instructor}
+        image={image}
+        description={description}
+      />
+      {/* Right side of workshop card */}
+      <WorkshopInfo date={date} name={name} link={link} />
+    </WorkshopStyled>
+  );
+}
+
+// Styles
 const WorkshopStyled = styled.div`
   background-color: #fff;
   border-radius: 10px;
@@ -61,19 +87,3 @@ const WorkshopStyled = styled.div`
     }
   }
 `;
-
-function Workshop({ level, description, instructor, date, name, link, image }) {
-  return (
-    <WorkshopStyled>
-      <WorkshopPreview
-        level={level}
-        instructor={instructor}
-        image={image}
-        description={description}
-      />
-      <WorkshopInfo date={date} name={name} link={link} />
-    </WorkshopStyled>
-  );
-}
-
-export default Workshop;

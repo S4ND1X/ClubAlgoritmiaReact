@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
+//Styled components object, capable of having a global style instead of using the app.css
 const GlobalStyle = createGlobalStyle`
 :root {
   --header-blue: #23a6d5;

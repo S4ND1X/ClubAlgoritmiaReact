@@ -1,26 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-
 import TeamMember from "./TeamMember";
 
-const TeamListStyled = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-
-  @media screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2em;
-  } /* Medium size */
-  @media screen and (max-width: 480px) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2em;
-  } /* Small size */
-  
-`;
-
+//Team Memeber information
 const teamMembers = [
   {
     name: "Jonathan Chavez",
@@ -75,16 +57,18 @@ const teamMembers = [
       "https://i.pinimg.com/originals/64/b7/de/64b7deb1bfa083d44f5e5b6a5b0f1859.jpg",
   },
 ];
-function TeamList() {
+
+//Return each member card
+export default function TeamList() {
   return (
     <TeamListStyled>
-      {teamMembers.map((member, index) => (
+      {teamMembers.map(({ name, avatar, title, link, bg }, index) => (
         <TeamMember
-          name={member.name}
-          avatar={member.avatar}
-          title={member.title}
-          link={member.link}
-          bg={member.bg}
+          name={name}
+          avatar={avatar}
+          title={title}
+          link={link}
+          bg={bg}
           key={index}
         />
       ))}
@@ -92,4 +76,20 @@ function TeamList() {
   );
 }
 
-export default TeamList;
+// Styles
+const TeamListStyled = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  } /* Medium size */
+  @media screen and (max-width: 480px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+  } /* Small size */
+`;

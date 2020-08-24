@@ -1,6 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+export default function HeaderNav() {
+  return (
+    <HeaderNavStyled>
+      <nav className="navigation">
+        <a href="#bootcamp-section">Bootcamp</a>
+        <a href="#workshops-section">Workshops</a>
+        <a href="#us-section">Nosotros</a>
+      </nav>
+      {/* Navigation links */}
+    </HeaderNavStyled>
+  );
+}
+
+//Styles
 const HeaderNavStyled = styled.div`
   display: flex;
   justify-content: space-between;
@@ -24,16 +38,3 @@ const HeaderNavStyled = styled.div`
     border-bottom: 1.5px solid white;
   }
 `;
-
-export default function HeaderNav() {
-  return (
-    <HeaderNavStyled>
-      <nav className="navigation">
-        <a href="#bootcamp-section">Bootcamp</a>
-        <a href="#workshops-section">Workshops</a>
-        <a href="#us-section">Nosotros</a>
-      </nav>
-      {/* Navigation links */}
-    </HeaderNavStyled>
-  );
-}
