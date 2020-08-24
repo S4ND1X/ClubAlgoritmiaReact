@@ -1,5 +1,5 @@
-import React from "./node_modules/react";
-import styled from "./node_modules/styled-components";
+import React from "react";
+import styled from "styled-components";
 
 import WorkshopList from "../components/Workshops/WorkshopList";
 import TeamList from "../components/Team/TeamList";
